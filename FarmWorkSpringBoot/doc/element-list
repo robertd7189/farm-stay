@@ -1,0 +1,6 @@
+com.fdm.FarmWorkSpringBoot
+com.fdm.FarmWorkSpringBoot.controller
+com.fdm.FarmWorkSpringBoot.dal
+com.fdm.FarmWorkSpringBoot.model
+com.fdm.FarmWorkSpringBoot.service
+com.fdm.FarmWorkSpringBoot.setup
