@@ -13,6 +13,9 @@ phases:
     - echo building FarmStay
     - java -version
     - mvn install
+    - pwd
+  	- find "$(pwd -P)" -name FarmWorkSpringBoot-0.0.1-SNAPSHOT.war 
+  	- echo $CODEBUILD_SRC_DIR
 artifacts:
   files:
     - '**/*'
