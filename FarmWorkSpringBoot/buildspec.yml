@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+    commands:
+    - echo installing maven...
+    - apt-get update -y
+    - apt-get install -y maven
+  build:
+    commands:
+    - echo building FarmStay
+    - java -version
+    - mvn install
+artifacts:
+  files:
+  - target/*.war
+  - scripts/*.sh
+  - appspec.yml
+  discard-paths: yes
+cache:
+  paths:
+  - '/root/.m2/**/*'
