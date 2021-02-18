@@ -12,7 +12,7 @@
 	<groupId>com.fdm</groupId>
 	<artifactId>FarmWorkSpringBoot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+<!-- 	<packaging>war</packaging> -->
 	<name>FarmWorkSpringBoot</name>
 	<description>Farm Work website</description>
 
@@ -85,9 +85,30 @@
 
 	<build>
 		<plugins>
-			<plugin>
+<!-- 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-war</id>
+						<phase>none</phase>
+					</execution>
+					<execution>
+						<id>war-exploded</id>
+						<configuration>
+							<webappDirectory>target/deploy</webappDirectory>
+							<archiveClasses>true</archiveClasses>
+						</configuration>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>exploded</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

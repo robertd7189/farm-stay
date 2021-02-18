@@ -10,15 +10,12 @@ phases:
     - apt-get install -y maven
   build:
     commands:
-    - echo building FarmStay
-    - java -version
-    - mvn install
-post_build:
+      - echo "Entered build phase"
+      - mvn clean prepare-package war:exploded
+  post_build:
     commands:
-    - echo Build completed on `date`
-    - mvn package
-    - mv target/FarmWorkSpringBoot-0.0.1-SNAPSHOT.war FarmWorkSpringBoot-0.0.1-SNAPSHOT.war
+      - echo "Entered the post-build phase"
+      - mv target/deploy ./
 artifacts:
   files:
-  - FarmWorkSpringBoot-0.0.1-SNAPSHOT.war
-  - .ebextensions/**/*
+    - deploy/**/*
