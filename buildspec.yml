@@ -16,7 +16,7 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'target/FarmWorkSpringBoot-0.0.1-SNAPSHOT.war'
+  base-directory: '/root/.m2/repository/com/fdm/FarmWorkSpringBoot/0.0.1-SNAPSHOT/FarmWorkSpringBoot-0.0.1-SNAPSHOT.war'
 cache:
   paths:
   - '/root/.m2/**/*'
