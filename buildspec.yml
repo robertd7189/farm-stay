@@ -4,23 +4,18 @@ phases:
   install:
     runtime-versions:
       java: openjdk8
+    pre_build:
     commands:
-    - echo installing maven...
-    - apt-get update -y
-    - apt-get install -y maven
+    - echo In the pre_build phase...
   build:
     commands:
-    - echo building FarmStay
-    - java -version
-    - mvn install
-    - pwd
-  	- find "$(pwd -P)" -name FarmWorkSpringBoot-0.0.1-SNAPSHOT.war 
-  	- echo $CODEBUILD_SRC_DIR
+    - echo Build started on `date`
+  post_build:
+    commands:
+    - echo Build completed on `date`
+    - mvn package
+    - mv target/FarmWorkSpringBoot-0.0.1-SNAPSHOT.war FarmWorkSpringBoot-0.0.1-SNAPSHOT.war
 artifacts:
   files:
-    - '**/*'
-    - echo $CODEBUILD_SRC_DIR
-  base-directory: '/target/farm-stay'
-cache:
-  paths:
-  - '/root/.m2/**/*'
+  - FarmWorkSpringBoot-0.0.1-SNAPSHOT.war
+  - .ebextensions/**/*
