@@ -102,7 +102,7 @@
 
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
-          <h1>Keep travelling, work safe<span>.</span></h1>
+          <h1>Keep travelling, work safe (it works)<span>.</span></h1>
           <h2>Helping travellers find fair farm work for visa extensions</h2>
           <section class="inner-page">
       <div class="container">
