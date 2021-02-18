@@ -16,6 +16,7 @@ phases:
 post_build:
     commands:
     - echo Build completed on `date`
+    - mvn package
     - mv target/FarmWorkSpringBoot-0.0.1-SNAPSHOT.war FarmWorkSpringBoot-0.0.1-SNAPSHOT.war
 artifacts:
   files:
