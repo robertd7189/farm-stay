@@ -4,16 +4,18 @@ phases:
   install:
     runtime-versions:
       java: openjdk8
-    pre_build:
     commands:
-    - echo In the pre_build phase...
+    - echo installing maven...
+    - apt-get update -y
+    - apt-get install -y maven
   build:
     commands:
-    - echo Build started on `date`
-  post_build:
+    - echo building FarmStay
+    - java -version
+    - mvn install
+post_build:
     commands:
     - echo Build completed on `date`
-    - mvn package
     - mv target/FarmWorkSpringBoot-0.0.1-SNAPSHOT.war FarmWorkSpringBoot-0.0.1-SNAPSHOT.war
 artifacts:
   files:
