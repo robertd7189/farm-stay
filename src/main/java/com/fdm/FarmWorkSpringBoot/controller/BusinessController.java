@@ -110,7 +110,7 @@ public class BusinessController {
 			session.setAttribute(BUSINESS_EXISTS_ATTRIBUTE, business);
 			session.setAttribute(CURRENT_BUSINESS_ATTRIBUTE, business);
 			model.addAttribute(CURRENT_BUSINESS_ATTRIBUTE, business);
-			session.setAttribute("writingReview", true);
+			
 			return DISPLAY_BUSINESS_URL;
 	}
 	/**
