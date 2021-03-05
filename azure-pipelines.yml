@@ -25,7 +25,7 @@ steps:
   inputs:
     containerRegistry: 'farmstaycontainer'
     repository: ‘farmstaycontainer’
-    command: ‘build’
+    command: build
     Dockerfile: ‘**/Dockerfile’
   displayName: ‘Docker image build’
 
